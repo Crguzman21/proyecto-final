@@ -1,0 +1,37 @@
+<div class="productos-container">
+    <h1 class="productos-titulo">Productos en tiempo real</h1>
+
+    {{#with user}}
+        <div class="usuario-info">
+            <h2 class="usuario-nombre">{{username}}</h2>
+
+            {{#if isAdmin}}
+                <h3 class="permisos-admin">Permisos de Administrador</h3>
+            {{else}}
+                <h3 class="permisos-noadmin">No tienes permisos de administrador</h3>
+            {{/if}}
+        </div>
+    {{/with}}
+
+    <div class="productos-grid">
+        {{#each products}}
+            <li class="producto-item">
+                <div class="producto-imagen">
+                    <img src="{{this.thumbnail}}" alt="{{this.title}}">
+                </div>
+                <h2 class="producto-titulo">{{this.title}}</h2>
+                <h3 class="producto-precio">Precio: ${{this.price}}</h3>
+            </li>
+        {{/each}}
+    </div>
+
+    <div class="form-container">
+    <form action="http://localhost:8080/api/products" method="post" enctype="multipart/form-data" class="product-form">
+        <input type="text" name="title" placeholder="Ingresa el nombre del producto" class="form-input" required>
+        <input type="number" name="price" placeholder="Ingresa el precio" class="form-input" required>
+        <input type="file" name="file" class="form-file" required>
+        <button type="submit" class="form-button">Agregar Producto</button>
+    </form>
+</div>
+
+</div>

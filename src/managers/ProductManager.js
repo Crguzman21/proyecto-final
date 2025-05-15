@@ -2,7 +2,7 @@ import fs from 'fs';
 
 class ProductManager{
     constructor() {
-        this.path = './src/products.json';
+        this.path = './src/data/products.json';
     }
 
     generateNewId = (products) => {
@@ -37,7 +37,7 @@ class ProductManager{
             status: newProduct.status != undefined ? newProduct.status : true,
             stock: newProduct.stock,
             category: newProduct.category,
-            thumbnails: newProduct.thumbnails || [],
+            thumbnail: newProduct.thumbnail || [],
         }
         products.push(productToAdd);
         await fs.promises.writeFile(this.path, JSON.stringify(products, null, 2), 'utf-8');
