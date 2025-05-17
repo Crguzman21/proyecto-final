@@ -1,13 +1,16 @@
-<div>
-    <h1>Home</h1>
+<div class="container">
+    <h1 class="main-title">Salsamentaria Las Margaritas</h1>
 
-    <h2>Lista de productos</h2>
-    <ul>
+    <h2 class="section-title">Lista de productos</h2>
+    <div class="card-grid">
         {{#each products}}
-            <li>{{this.title}} - {{this.price}}</li>
+            <div class="product-card">
+                <img src="{{this.thumbnail}}" alt="{{this.title}}" class="product-image" />
+                <div class="card-body">
+                    <h3 class="product-name">{{this.title}}</h3>
+                    <p class="product-price">${{this.price}}</p>
+                </div>
+            </div>
         {{/each}}
-    </ul>
+    </div>
 </div>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/index.js"></script>

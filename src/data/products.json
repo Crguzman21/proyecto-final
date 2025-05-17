@@ -4,11 +4,11 @@
     "title": "Arroz Roa",
     "description": "Arroz blanco premium 1kg",
     "code": "abr001",
-    "price": 3000,
+    "price": 2700,
     "status": true,
     "stock": 120,
     "category": "abarrotes",
-    "thumbnail": ""
+    "thumbnail": "/img/roa.png"
   },
   {
     "id": 2,
@@ -19,7 +19,7 @@
     "status": true,
     "stock": 90,
     "category": "abarrotes",
-    "thumbnail": ""
+    "thumbnail": "/img/aceite.jpg"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "status": true,
     "stock": 70,
     "category": "abarrotes",
-    "thumbnail": ""
+    "thumbnail": "/img/tajado.webp"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "status": true,
     "stock": 60,
     "category": "abarrotes",
-    "thumbnail": ""
+    "thumbnail": "/img/cafe.jpg"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "status": true,
     "stock": 50,
     "category": "abarrotes",
-    "thumbnail": ""
+    "thumbnail": "./img/chocolate.jpeg"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "status": true,
     "stock": 150,
     "category": "aseo",
-    "thumbnail": ""
+    "thumbnail": "/img/rey.webp"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "status": true,
     "stock": 80,
     "category": "aseo",
-    "thumbnail": ""
+    "thumbnail": "/img/fab.webp"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "status": true,
     "stock": 70,
     "category": "aseo",
-    "thumbnail": ""
+    "thumbnail": "/img/shampoo.webp"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "status": true,
     "stock": 60,
     "category": "aseo",
-    "thumbnail": ""
+    "thumbnail": "./img/higienico.jpg"
   },
   {
     "id": 10,
@@ -107,95 +107,95 @@
     "status": true,
     "stock": 100,
     "category": "aseo",
-    "thumbnail": ""
+    "thumbnail": "/img/colgate.webp"
   },
   {
     "id": 11,
-    "title": "Fríjol Bola Roja",
-    "description": "Fríjol rojo paisa 500g",
+    "title": "Tomate Chonto",
+    "description": "Tomate Chonto por 500g",
     "code": "leg001",
     "price": 3200,
     "status": true,
     "stock": 100,
     "category": "legumbre",
-    "thumbnail": ""
+    "thumbnail": "/img/tomate.jpeg"
   },
   {
     "id": 12,
-    "title": "Lenteja La Coruña",
-    "description": "Lenteja seca 500g",
+    "title": "Papa capira",
+    "description": "Papa capira 500g",
     "code": "leg002",
     "price": 2800,
     "status": true,
     "stock": 90,
     "category": "legumbre",
-    "thumbnail": ""
+    "thumbnail": "/img/papa.png"
   },
   {
     "id": 13,
-    "title": "Garbanzo Del Huerto",
-    "description": "Garbanzo seco 500g",
+    "title": "Platano Verde",
+    "description": "Platano verde 1kg",
     "code": "leg003",
     "price": 3000,
     "status": true,
     "stock": 85,
     "category": "legumbre",
-    "thumbnail": ""
+    "thumbnail": "/img/platano.jpg"
   },
   {
     "id": 14,
     "title": "Arveja Verde",
-    "description": "Arveja partida 500g",
+    "description": "Arveja desgranada 500g",
     "code": "leg004",
-    "price": 2900,
+    "price": 7000,
     "status": true,
     "stock": 110,
     "category": "legumbre",
-    "thumbnail": ""
+    "thumbnail": "/img/arveja.webp"
   },
   {
     "id": 15,
     "title": "Fríjol Verde",
-    "description": "Fríjol fresco 500g",
+    "description": "Fríjol desgranado 500g",
     "code": "leg005",
     "price": 3500,
     "status": true,
     "stock": 95,
     "category": "legumbre",
-    "thumbnail": ""
+    "thumbnail": "/img/frijol.jpg"
   },
   {
     "id": 16,
     "title": "Salchichón Zenú",
-    "description": "Rodajas 250g",
+    "description": "salchichon 225g",
     "code": "cf001",
     "price": 5800,
     "status": true,
     "stock": 40,
     "category": "carnes frias",
-    "thumbnail": ""
+    "thumbnail": "/img/salchichon.jpg"
   },
   {
     "id": 17,
     "title": "Jamón Pietrán",
-    "description": "Jamón de pechuga de pollo 250g",
+    "description": "Jamón de cerdo 250g",
     "code": "cf002",
     "price": 7200,
     "status": true,
     "stock": 35,
     "category": "carnes frias",
-    "thumbnail": ""
+    "thumbnail": "/img/jamon.png"
   },
   {
     "id": 18,
-    "title": "Chorizo Ranchera",
-    "description": "Empaque 300g",
+    "title": "Salchicha Ranchera",
+    "description": "Salchicha ranchera por 5 unidades",
     "code": "cf003",
     "price": 6900,
     "status": true,
     "stock": 50,
     "category": "carnes frias",
-    "thumbnail": ""
+    "thumbnail": "/img/salchicha.jpg"
   },
   {
     "id": 19,
@@ -206,17 +206,17 @@
     "status": true,
     "stock": 25,
     "category": "carnes frias",
-    "thumbnail": ""
+    "thumbnail": "/img/tocineta.jpg"
   },
   {
     "id": 20,
     "title": "Mortadela Zenú",
-    "description": "Rodajas 200g",
+    "description": "Mortadela por 250g",
     "code": "cf005",
     "price": 4700,
     "status": true,
     "stock": 60,
     "category": "carnes frias",
-    "thumbnail": ""
+    "thumbnail": "/img/mortadela.webp"
   }
 ]

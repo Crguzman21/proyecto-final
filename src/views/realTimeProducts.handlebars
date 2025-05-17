@@ -1,25 +1,25 @@
-<div>
-    <h1>Real Time Products</h1>
+<div class="realtime-container">
+    <h1 class="realtime-title">Real Time Products</h1>
 
-    <form id="formNewProduct">
-        <input type="text" name="title" placeholder="Ingrese el nombre del producto" requerid>
-        <input type="text" name="description" placeholder="Ingrese la descripcion del producto" requerid>
-        <input type="text" name="code" placeholder="Ingrese el codigo del producto" requerid>
-        <input type="number" name="price" placeholder="Ingrese el precio del producto" requerid>
-        <input type="number" name="stock" placeholder="Ingrese el stock del producto" requerid>
-        <input type="text" name="category" placeholder="Ingrese la categoria del producto" requerid>
-
-        <button type="submit">enviar</button>
-
+    <form id="formNewProduct" class="product-form">
+        <h2 class="form-title">Agregar producto</h2>
+        <input type="text" name="title" placeholder="Ingrese el nombre del producto" required class="form-input">
+        <input type="text" name="description" placeholder="Ingrese la descripcion del producto" required class="form-input">
+        <input type="text" name="code" placeholder="Ingrese el codigo del producto" required class="form-input">
+        <input type="number" name="price" placeholder="Ingrese el precio del producto" required class="form-input">
+        <input type="number" name="stock" placeholder="Ingrese el stock del producto" required class="form-input">
+        <input type="text" name="category" placeholder="Ingrese la categoria del producto" required class="form-input">
+        <button type="submit" class="submit-button">Enviar</button>
     </form>
 
-    <h2>Lista de productos</h2>
-    <ul id="productsList">
+    <h3 class="product-list-title">Lista de productos</h3>
+    <ul id="productsList" class="product-list">
         {{#each products}}
-            <li>{{this.title}} - {{this.price}}</li>
+            <li class="product-item">{{this.title}} - ${{this.price}}</li>
         {{/each}}
     </ul>
 </div>
+
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/index.js"></script>
