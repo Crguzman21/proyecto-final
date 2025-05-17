@@ -2,27 +2,24 @@ import express from "express";
 import ProductManager from "../managers/ProductManager.js";
 
 const viewsRouter = express.Router();
-
 const productManager = new ProductManager();
-const user = {username: "Pepe", isAdmin: true};
 
-const middlewareIsAdmin = (req, res, next) => {
-    if(user.isAdmin){
-        next();
-    }else{
-        res.redirect('/error');
+viewsRouter.get('/', async(req, res) => {
+    try {
+        const products = await productManager.getProducts();
+        res.render('home', {products});        
+    } catch (error) {
+        res.status(500).send({ message: error.message})
     }
-}
-
-viewsRouter.get('/', middlewareIsAdmin, (req, res) => {
-    res.render('home');
-})
+});
 
 viewsRouter.get('/realtimeproducts', async(req, res) => {
-
-    const products = await productManager.getProducts();
-
-    res.render('realtimeproducts', {products, user});
-})
+    try {
+        const products = await productManager.getProducts();
+        res.render('realTimeProducts', {products});        
+    } catch (error) {
+        res.status(500).send({ message: error.message})
+    }
+});
 
 export default viewsRouter;

@@ -1,21 +1,222 @@
 [
   {
     "id": 1,
-    "title": "Teclado Logitech",
-    "price": 1200,
-    "thumbnail": "/img/teclado.webp"
+    "title": "Arroz Roa",
+    "description": "Arroz blanco premium 1kg",
+    "code": "abr001",
+    "price": 3000,
+    "status": true,
+    "stock": 120,
+    "category": "abarrotes",
+    "thumbnail": ""
   },
   {
     "id": 2,
-    "title": "Mouse Redragon",
-    "price": 500,
-    "thumbnail": "/img/mouse.jpg"
+    "title": "Aceite Premier",
+    "description": "Aceite vegetal 900ml",
+    "code": "abr002",
+    "price": 5000,
+    "status": true,
+    "stock": 90,
+    "category": "abarrotes",
+    "thumbnail": ""
   },
   {
     "id": 3,
-    "title": "Auriculares Logitech",
-    "price": 600,
+    "title": "Pan Tajado Bimbo",
+    "description": "Pan blanco tajado 500g",
+    "code": "abr003",
+    "price": 5500,
     "status": true,
-    "thumbnail": "/img/1747279323077-auriculares.png"
+    "stock": 70,
+    "category": "abarrotes",
+    "thumbnail": ""
+  },
+  {
+    "id": 4,
+    "title": "Café Sello Rojo",
+    "description": "Café molido 250g",
+    "code": "abr004",
+    "price": 9500,
+    "status": true,
+    "stock": 60,
+    "category": "abarrotes",
+    "thumbnail": ""
+  },
+  {
+    "id": 5,
+    "title": "Chocolate Corona",
+    "description": "Chocolate en pastilla 250g",
+    "code": "abr005",
+    "price": 7800,
+    "status": true,
+    "stock": 50,
+    "category": "abarrotes",
+    "thumbnail": ""
+  },
+  {
+    "id": 6,
+    "title": "Jabón Rey",
+    "description": "Jabón multiusos 300g",
+    "code": "ase001",
+    "price": 1800,
+    "status": true,
+    "stock": 150,
+    "category": "aseo",
+    "thumbnail": ""
+  },
+  {
+    "id": 7,
+    "title": "Detergente Fab",
+    "description": "Detergente en polvo 1kg",
+    "code": "ase002",
+    "price": 7000,
+    "status": true,
+    "stock": 80,
+    "category": "aseo",
+    "thumbnail": ""
+  },
+  {
+    "id": 8,
+    "title": "Shampoo Savital",
+    "description": "Shampoo con sábila 400ml",
+    "code": "ase003",
+    "price": 8500,
+    "status": true,
+    "stock": 70,
+    "category": "aseo",
+    "thumbnail": ""
+  },
+  {
+    "id": 9,
+    "title": "Papel Higiénico Familia",
+    "description": "Paquete 12 rollos",
+    "code": "ase004",
+    "price": 9500,
+    "status": true,
+    "stock": 60,
+    "category": "aseo",
+    "thumbnail": ""
+  },
+  {
+    "id": 10,
+    "title": "Crema Dental Colgate",
+    "description": "Crema dental triple acción",
+    "code": "ase005",
+    "price": 6500,
+    "status": true,
+    "stock": 100,
+    "category": "aseo",
+    "thumbnail": ""
+  },
+  {
+    "id": 11,
+    "title": "Fríjol Bola Roja",
+    "description": "Fríjol rojo paisa 500g",
+    "code": "leg001",
+    "price": 3200,
+    "status": true,
+    "stock": 100,
+    "category": "legumbre",
+    "thumbnail": ""
+  },
+  {
+    "id": 12,
+    "title": "Lenteja La Coruña",
+    "description": "Lenteja seca 500g",
+    "code": "leg002",
+    "price": 2800,
+    "status": true,
+    "stock": 90,
+    "category": "legumbre",
+    "thumbnail": ""
+  },
+  {
+    "id": 13,
+    "title": "Garbanzo Del Huerto",
+    "description": "Garbanzo seco 500g",
+    "code": "leg003",
+    "price": 3000,
+    "status": true,
+    "stock": 85,
+    "category": "legumbre",
+    "thumbnail": ""
+  },
+  {
+    "id": 14,
+    "title": "Arveja Verde",
+    "description": "Arveja partida 500g",
+    "code": "leg004",
+    "price": 2900,
+    "status": true,
+    "stock": 110,
+    "category": "legumbre",
+    "thumbnail": ""
+  },
+  {
+    "id": 15,
+    "title": "Fríjol Verde",
+    "description": "Fríjol fresco 500g",
+    "code": "leg005",
+    "price": 3500,
+    "status": true,
+    "stock": 95,
+    "category": "legumbre",
+    "thumbnail": ""
+  },
+  {
+    "id": 16,
+    "title": "Salchichón Zenú",
+    "description": "Rodajas 250g",
+    "code": "cf001",
+    "price": 5800,
+    "status": true,
+    "stock": 40,
+    "category": "carnes frias",
+    "thumbnail": ""
+  },
+  {
+    "id": 17,
+    "title": "Jamón Pietrán",
+    "description": "Jamón de pechuga de pollo 250g",
+    "code": "cf002",
+    "price": 7200,
+    "status": true,
+    "stock": 35,
+    "category": "carnes frias",
+    "thumbnail": ""
+  },
+  {
+    "id": 18,
+    "title": "Chorizo Ranchera",
+    "description": "Empaque 300g",
+    "code": "cf003",
+    "price": 6900,
+    "status": true,
+    "stock": 50,
+    "category": "carnes frias",
+    "thumbnail": ""
+  },
+  {
+    "id": 19,
+    "title": "Tocineta Rica",
+    "description": "Tocineta ahumada 250g",
+    "code": "cf004",
+    "price": 8500,
+    "status": true,
+    "stock": 25,
+    "category": "carnes frias",
+    "thumbnail": ""
+  },
+  {
+    "id": 20,
+    "title": "Mortadela Zenú",
+    "description": "Rodajas 200g",
+    "code": "cf005",
+    "price": 4700,
+    "status": true,
+    "stock": 60,
+    "category": "carnes frias",
+    "thumbnail": ""
   }
 ]

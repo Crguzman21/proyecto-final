@@ -1,37 +1,25 @@
-<div class="productos-container">
-    <h1 class="productos-titulo">Productos en tiempo real</h1>
+<div>
+    <h1>Real Time Products</h1>
 
-    {{#with user}}
-        <div class="usuario-info">
-            <h2 class="usuario-nombre">{{username}}</h2>
+    <form id="formNewProduct">
+        <input type="text" name="title" placeholder="Ingrese el nombre del producto" requerid>
+        <input type="text" name="description" placeholder="Ingrese la descripcion del producto" requerid>
+        <input type="text" name="code" placeholder="Ingrese el codigo del producto" requerid>
+        <input type="number" name="price" placeholder="Ingrese el precio del producto" requerid>
+        <input type="number" name="stock" placeholder="Ingrese el stock del producto" requerid>
+        <input type="text" name="category" placeholder="Ingrese la categoria del producto" requerid>
 
-            {{#if isAdmin}}
-                <h3 class="permisos-admin">Permisos de Administrador</h3>
-            {{else}}
-                <h3 class="permisos-noadmin">No tienes permisos de administrador</h3>
-            {{/if}}
-        </div>
-    {{/with}}
+        <button type="submit">enviar</button>
 
-    <div class="productos-grid">
-        {{#each products}}
-            <li class="producto-item">
-                <div class="producto-imagen">
-                    <img src="{{this.thumbnail}}" alt="{{this.title}}">
-                </div>
-                <h2 class="producto-titulo">{{this.title}}</h2>
-                <h3 class="producto-precio">Precio: ${{this.price}}</h3>
-            </li>
-        {{/each}}
-    </div>
-
-    <div class="form-container">
-    <form action="http://localhost:8080/api/products" method="post" enctype="multipart/form-data" class="product-form">
-        <input type="text" name="title" placeholder="Ingresa el nombre del producto" class="form-input" required>
-        <input type="number" name="price" placeholder="Ingresa el precio" class="form-input" required>
-        <input type="file" name="file" class="form-file" required>
-        <button type="submit" class="form-button">Agregar Producto</button>
     </form>
+
+    <h2>Lista de productos</h2>
+    <ul id="productsList">
+        {{#each products}}
+            <li>{{this.title}} - {{this.price}}</li>
+        {{/each}}
+    </ul>
 </div>
 
-</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
