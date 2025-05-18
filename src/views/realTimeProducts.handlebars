@@ -12,12 +12,16 @@
         <button type="submit" class="submit-button">Enviar</button>
     </form>
 
-    <h3 class="product-list-title">Lista de productos</h3>
     <ul id="productsList" class="product-list">
-        {{#each products}}
-            <li class="product-item">{{this.title}} - ${{this.price}}</li>
-        {{/each}}
-    </ul>
+    {{#each products}}
+        <li class="product-item" data-id="{{this._id}}">
+            {{this.title}} - ${{this.price}}
+            <button id="deleteProduct" class="delete-button" data-id="{{this._id}}">Eliminar</button>
+        </li>
+    {{/each}}
+</ul>
+
+
 </div>
 
 

@@ -43,8 +43,17 @@ io.on('connection', (socket) => {
         } catch (error) {
             console.error("Error al añadir el producto")
         }
-    })
-})
+    });
+
+    socket.on("deleteProduct", async (productId) => {
+    try {
+        await productManager.deleteProductById(productId);
+        io.emit("productDeleted", productId);
+    } catch (error) {
+        console.error("Error al eliminar el producto:", error.message);
+    }
+});
+});
 
 
 server.listen(PORT, () => {

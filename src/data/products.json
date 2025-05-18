@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "title": "Arroz Roa",
     "description": "Arroz blanco premium 1kg",
     "code": "abr001",
@@ -11,7 +11,7 @@
     "thumbnail": "/img/roa.png"
   },
   {
-    "id": 2,
+    "id": "2",
     "title": "Aceite Premier",
     "description": "Aceite vegetal 900ml",
     "code": "abr002",
@@ -22,7 +22,7 @@
     "thumbnail": "/img/aceite.jpg"
   },
   {
-    "id": 3,
+    "id": "3",
     "title": "Pan Tajado Bimbo",
     "description": "Pan blanco tajado 500g",
     "code": "abr003",
@@ -33,7 +33,7 @@
     "thumbnail": "/img/tajado.webp"
   },
   {
-    "id": 4,
+    "id": "4",
     "title": "Café Sello Rojo",
     "description": "Café molido 250g",
     "code": "abr004",
@@ -44,7 +44,7 @@
     "thumbnail": "/img/cafe.jpg"
   },
   {
-    "id": 5,
+    "id": "5",
     "title": "Chocolate Corona",
     "description": "Chocolate en pastilla 250g",
     "code": "abr005",
@@ -55,7 +55,7 @@
     "thumbnail": "./img/chocolate.jpeg"
   },
   {
-    "id": 6,
+    "id": "6",
     "title": "Jabón Rey",
     "description": "Jabón multiusos 300g",
     "code": "ase001",
@@ -66,7 +66,7 @@
     "thumbnail": "/img/rey.webp"
   },
   {
-    "id": 7,
+    "id": "7",
     "title": "Detergente Fab",
     "description": "Detergente en polvo 1kg",
     "code": "ase002",
@@ -77,7 +77,7 @@
     "thumbnail": "/img/fab.webp"
   },
   {
-    "id": 8,
+    "id": "8",
     "title": "Shampoo Savital",
     "description": "Shampoo con sábila 400ml",
     "code": "ase003",
@@ -88,7 +88,7 @@
     "thumbnail": "/img/shampoo.webp"
   },
   {
-    "id": 9,
+    "id": "9",
     "title": "Papel Higiénico Familia",
     "description": "Paquete 12 rollos",
     "code": "ase004",
@@ -99,7 +99,7 @@
     "thumbnail": "./img/higienico.jpg"
   },
   {
-    "id": 10,
+    "id": "10",
     "title": "Crema Dental Colgate",
     "description": "Crema dental triple acción",
     "code": "ase005",
@@ -110,7 +110,7 @@
     "thumbnail": "/img/colgate.webp"
   },
   {
-    "id": 11,
+    "id": "11",
     "title": "Tomate Chonto",
     "description": "Tomate Chonto por 500g",
     "code": "leg001",
@@ -121,7 +121,7 @@
     "thumbnail": "/img/tomate.jpeg"
   },
   {
-    "id": 12,
+    "id": "12",
     "title": "Papa capira",
     "description": "Papa capira 500g",
     "code": "leg002",
@@ -132,7 +132,7 @@
     "thumbnail": "/img/papa.png"
   },
   {
-    "id": 13,
+    "id": "13",
     "title": "Platano Verde",
     "description": "Platano verde 1kg",
     "code": "leg003",
@@ -143,7 +143,7 @@
     "thumbnail": "/img/platano.jpg"
   },
   {
-    "id": 14,
+    "id": "14",
     "title": "Arveja Verde",
     "description": "Arveja desgranada 500g",
     "code": "leg004",
@@ -154,7 +154,7 @@
     "thumbnail": "/img/arveja.webp"
   },
   {
-    "id": 15,
+    "id": "15",
     "title": "Fríjol Verde",
     "description": "Fríjol desgranado 500g",
     "code": "leg005",
@@ -165,7 +165,7 @@
     "thumbnail": "/img/frijol.jpg"
   },
   {
-    "id": 16,
+    "id": "16",
     "title": "Salchichón Zenú",
     "description": "salchichon 225g",
     "code": "cf001",
@@ -176,7 +176,7 @@
     "thumbnail": "/img/salchichon.jpg"
   },
   {
-    "id": 17,
+    "id": "17",
     "title": "Jamón Pietrán",
     "description": "Jamón de cerdo 250g",
     "code": "cf002",
@@ -187,7 +187,7 @@
     "thumbnail": "/img/jamon.png"
   },
   {
-    "id": 18,
+    "id": "18",
     "title": "Salchicha Ranchera",
     "description": "Salchicha ranchera por 5 unidades",
     "code": "cf003",
@@ -198,7 +198,7 @@
     "thumbnail": "/img/salchicha.jpg"
   },
   {
-    "id": 19,
+    "id": "19",
     "title": "Tocineta Rica",
     "description": "Tocineta ahumada 250g",
     "code": "cf004",
@@ -209,7 +209,7 @@
     "thumbnail": "/img/tocineta.jpg"
   },
   {
-    "id": 20,
+    "id": "20",
     "title": "Mortadela Zenú",
     "description": "Mortadela por 250g",
     "code": "cf005",
