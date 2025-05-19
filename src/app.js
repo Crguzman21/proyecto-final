@@ -5,7 +5,11 @@ import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import http from "http";
 import { Server } from "socket.io";
-import ProductManager from "./managers/ProductManager.js";
+import connectMongoDB from "./config/db.js";
+import dotenv from "dotenv";
+import Product from "./models/product.model.js";
+
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
@@ -17,7 +21,10 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded( { extended: true } ));
 
-const PORT = 8080;
+const PORT = process.env.PORT;
+
+connectMongoDB();
+
 //handlebars
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
@@ -31,13 +38,13 @@ app.use('/api/carts', cartsRouter);
 
 
 //websocket servidor
-const productManager = new ProductManager();
+const product = new Product();
 io.on('connection', (socket) => {
     console.log("Nuevo cliente conectado");
 
     socket.on("newProduct", async(productData)=>{
         try {
-            const newProduct =await productManager.addProduct(productData);
+            const newProduct =await product.addProduct(productData);
             
             io.emit("productAdded", newProduct);
         } catch (error) {
@@ -47,7 +54,7 @@ io.on('connection', (socket) => {
 
     socket.on("deleteProduct", async (productId) => {
     try {
-        await productManager.deleteProductById(productId);
+        await product.deleteProductById(productId);
         io.emit("productDeleted", productId);
     } catch (error) {
         console.error("Error al eliminar el producto:", error.message);

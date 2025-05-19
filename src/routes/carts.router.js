@@ -1,38 +1,42 @@
 import { Router } from 'express';
-import CartManager from '../managers/CartManager.js';
+import Cart from '../models/cart.model.js';
 
 const cartsRouter = Router();
-const cartManager = new CartManager('./src/data/carts.json');
 
 cartsRouter.post('/', async (req, res) => {
     try {
-        const cart = await cartManager.addCart();
-        res.status(201).json({ cart, message: "Carrito creado con éxito" });
+        const cart = new Cart();
+        await cart.save();
+        res.status(201).json({ status: "success", payload: cart });
     } catch (error) {
-        res.status(500).json({ error: "Error al crear el carrito" });
+        res.status(500).json({ status: "error", message: "Error al crear el carrito" });
     }
 });
 
 cartsRouter.get('/:cid', async (req, res) => {
     try {
         const cid = req.params.cid;
-        const products = await cartManager.getProductsInCartById(cid);
-        res.status(200).json({ products, message: "Productos obtenidos con éxito" });
+        const cart = await Cart.findOne({ _id: cid }).populate("products.product");
+
+        if(!cart) return res.status(404).json({ status: "error", message: "Carrito no encontrado" });
+        res.status(200).json({ status: "success", payload: cart.products });
     } catch (error) {
-        res.status(500).json({ error: "Error al obtener los productos del carrito" });
+        res.status(500).json({ status: "error", message: "Error al obtener el carrito" });
     }
 });
 
 cartsRouter.post('/:cid/product/:pid', async (req, res) => {
     try {
-        const cid = req.params.cid;
-        const pid = parseInt(req.params.pid);
-        const quantity = req.body.quantity || 1;
+        const {cid, pid} = req.params;
+        const { quantity} = req.body;
+        const updateCart = await Cart.findOneAndUpdate({ _id: cid }, { $push: {products: {product: pid, quantity}}}, { new: true, runValidators: true });
+        
+        if(!updateCart) return res.status(404).json({ status: "error", message: "Carrito no encontrado" });
 
-        const cart = await cartManager.addProductInCart(cid, pid, quantity);
-        res.status(200).json({ cart, message: "Producto agregado con éxito" });
+
+        res.status(200).json({ status: "success", payload: updateCart });
     } catch (error) {
-        res.status(500).json({ error: "Error al agregar el producto al carrito" });
+        res.status(500).json({ status: "error", message: "Error al agregar el producto al carrito" });
     }
 });
 
