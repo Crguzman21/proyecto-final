@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         socket.emit("newProduct", productData);    
+        formNewProduct.reset();
     });
 
     socket.on("productAdded", (newProduct)=>{

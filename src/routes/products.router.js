@@ -12,15 +12,13 @@ productsRouter.delete('/:pid', deleteProduct);
 
 productsRouter.get('/', async (req, res) => {
     try {
-
-        const {limit = 10, page = 1} = req.query;
-
-        const products = await Product.paginate({}, { limit, page});
+        const products = await Product.find();
         res.status(200).json({ status : "success", payload: products });
     } catch (error) {
         res.status(500).json({ status: "error", message: "Error al obtener los productos" });
     }
 });
+
 
 productsRouter.post('/', uploader.single('file'), async (req, res) => {
 
@@ -43,10 +41,10 @@ productsRouter.get('/:pid', async (req, res) => {
         if (product) {
             res.status(200).json({ status: "success", payload: product });
         } else {
-            res.status(404).json({ status: "error", message: "Producto no encontrado" });
+            res.status(404).json({ message: "Producto no encontrado" });
         }
     } catch (error) {
-        res.status(500).json({ status: "error", message: "Error al obtener el producto" });
+        res.status(500).json({ error: "Error al obtener el producto" });
     }
 });
 
@@ -60,7 +58,7 @@ productsRouter.post('/', async (req, res) => {
         await product.save();
         res.status(201).json({ status: "success", payload: product });
     } catch (error) {
-        res.status(500).json({ status: "error", message: "Error al crear el producto" });
+        res.status(500).json({ error: "Error al crear el producto" });
     }
 });
 
@@ -69,7 +67,7 @@ productsRouter.put('/:pid', async (req, res) => {
         const { pid } = req.params;
         const updatedFields = req.body;
 
-        const updatedProduct = await Product.findByIdAndUpdate(pid, updatedFields, { new: true, runValidators: true });
+        const updatedProduct = await Product.findByIdAndUpdate(pid, updatedFields, { new: true });
 
         if (updatedProduct) {
             res.status(200).json({ status: "success", payload: updatedProduct });
@@ -87,7 +85,7 @@ productsRouter.delete('/:pid', async (req, res) => {
         const deleted = await Product.findByIdAndDelete(pid);
 
         if (deleted) {
-            res.status(200).json({status: "success", payload: deleted});
+            res.status(200).json({ status: "success", payload: deleted });
         } else {
             res.status(404).json({ status: "error", message: "Producto no encontrado" });
         }

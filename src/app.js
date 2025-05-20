@@ -44,8 +44,8 @@ io.on('connection', (socket) => {
 
     socket.on("newProduct", async(productData)=>{
         try {
-            const newProduct =await product.addProduct(productData);
-            
+            const newProduct =await Product(productData);
+            await newProduct.save();
             io.emit("productAdded", newProduct);
         } catch (error) {
             console.error("Error al añadir el producto")
@@ -54,7 +54,7 @@ io.on('connection', (socket) => {
 
     socket.on("deleteProduct", async (productId) => {
     try {
-        await product.deleteProductById(productId);
+        await Product.findByIdAndDelete(productId);
         io.emit("productDeleted", productId);
     } catch (error) {
         console.error("Error al eliminar el producto:", error.message);
