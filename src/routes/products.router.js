@@ -15,13 +15,14 @@ productsRouter.get('/', async (req, res) => {
         const products = await Product.find();
         res.status(200).json({ status : "success", payload: products });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ status: "error", message: "Error al obtener los productos" });
     }
 });
 
+
 productsRouter.post('/', uploader.single('file'), async (req, res) => {
 
-    if (!req.file) return res.status(401).json({ message: "No se ha subido ninguna imagen" });    
+    if (!req.file) return res.status(401).json({ status: "error", message: "No se ha subido ningún archivo" });    
 
     const title = req.body.title;
     const price = parseInt(req.body.price);
@@ -69,12 +70,12 @@ productsRouter.put('/:pid', async (req, res) => {
         const updatedProduct = await Product.findByIdAndUpdate(pid, updatedFields, { new: true });
 
         if (updatedProduct) {
-            res.status(200).json({ updatedProduct, message: "Producto actualizado" });
+            res.status(200).json({ status: "success", payload: updatedProduct });
         } else {
-            res.status(404).json({ message: "Producto no encontrado" });
+            res.status(404).json({ status: "error", message: "Producto no encontrado" });
         }
     } catch (error) {
-        res.status(500).json({ error: "Error al actualizar el producto" });
+        res.status(500).json({ status: "error", message: "Error al actualizar el producto" });
     }
 });
 
@@ -84,12 +85,12 @@ productsRouter.delete('/:pid', async (req, res) => {
         const deleted = await Product.findByIdAndDelete(pid);
 
         if (deleted) {
-            res.status(200).json({ message: "Producto eliminado correctamente" });
+            res.status(200).json({ status: "success", payload: deleted });
         } else {
-            res.status(404).json({ message: "Producto no encontrado" });
+            res.status(404).json({ status: "error", message: "Producto no encontrado" });
         }
     } catch (error) {
-        res.status(500).json({ error: "Error al eliminar el producto" });
+        res.status(500).json({ status: "error", message: "Error al eliminar el producto" });
     }
 });
 
