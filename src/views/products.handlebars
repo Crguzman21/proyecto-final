@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 class="main-title">Lista de Productos</h1>
+
+  <form class="product-form" method="GET" action="/products">
+    <label class="form-title" for="limit">Productos por página:</label>
+    <input class="form-input" type="number" name="limit" value="{{limit}}" min="1" />
+
+    <label class="form-title" for="query">Categoría:</label>
+    <input class="form-input" type="text" name="query" placeholder="Ej: abarrotes, carnes frias, legumbre, aseo, " value="{{query}}" />
+
+    <label class="form-title" for="sort">Ordenar por precio:</label>
+    <select class="form-input" name="sort">
+      <option value="">Sin orden</option>
+      <option value="asc" {{#if sortAscSelected}}selected{{/if}}>Ascendente</option>
+      <option value="desc" {{#if sortDescSelected}}selected{{/if}}>Descendente</option>
+    </select>
+
+    <button class="submit-button" type="submit">Filtrar</button>
+  </form>
+
+  <div class="card-grid">
+    {{#each products}}
+      <div class="product-card">
+        <img class="product-image" src="{{this.thumbnail}}" alt="{{this.title}}" />
+        <div class="card-body">
+          <h2 class="product-name">{{this.title}}</h2>
+          <p>{{this.description}}</p>
+          <p class="product-price"><strong>Precio:</strong> ${{this.price}}</p>
+          <p><strong>Categoría:</strong> {{this.category}}</p>
+          <a href="/products/{{this._id}}" class="submit-button" style="display: inline-block; margin-top: 0.5rem;">Ver detalle</a>
+          <form action="/api/carts/{{../cartId}}/products/{{this._id}}" method="POST" style="margin-top: 0.5rem;">
+            <button class="submit-button" type="submit">Agregar al carrito</button>
+          </form>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
+  <div style="margin-top: 2rem; text-align: center;">
+    {{#if hasPrevPage}}
+      <a class="submit-button" href="{{prevLink}}">⬅ Página Anterior</a>
+    {{/if}}
+
+    <span style="margin: 0 10px;">Página {{page}} de {{totalPages}}</span>
+
+    {{#if hasNextPage}}
+      <a class="submit-button" href="{{nextLink}}">Página Siguiente ➡</a>
+    {{/if}}
+  </div>
+</div>

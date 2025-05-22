@@ -47,41 +47,6 @@ const deleteProduct = async(req, res) => {
     }
 }
 
-const pagesProducts = async(req, res) => {
 
-    try {
-        const {limit = 10, page = 1, sort, query} = req.query;
 
-        const filter = {};
-        if (query){
-            if (query === 'available') filter.status = true;
-            else filter.category = query;
-        }
-
-        const options = {
-            limit: parseInt(limit),
-            page: parseInt(page),
-            sort: sort === 'asc' ? {price : 1} : sort === 'desc' ? {price : -1 } : {},
-            lean: true
-        };
-
-        const result = await Product.paginate(filter, options);
-
-        res.json({
-            status: 'success',
-            payload: result.docs,
-            totalPages: result.totalPages,
-            prevPage: result.prevPage,
-            nextPage: result.nextPage,
-            page: result.page,
-            hasPrevPage: result.hasPrevPage,
-            hasNextPage: result.hasNextPage,
-            prevLink: result.hasPrevPage ? `http://localhost:8080/products?limit=${limit}&page=${result.prevPage}&sort=${sort}&query=${query}` : null,
-            nextLink: result.hasNextPage ? `http://localhost:8080/products?limit=${limit}&page=${result.nextPage}&sort=${sort}&query=${query}` : null
-        });
-    } catch (error) {
-        res.status(500).json({ status: "error", message: "Error al obtener los productos" });
-    }
-}
-
-export{ getAllProducts, createProduct, updateProduct, deleteProduct, pagesProducts };
+export{ getAllProducts, createProduct, updateProduct, deleteProduct};

@@ -169,3 +169,10 @@
 .delete-button:hover {
     background-color: #c82333;
 }
+
+.product-description {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}

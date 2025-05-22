@@ -1,0 +1,23 @@
+{{#each payload}}
+    <div class="product">
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <p>Precio: ${{this.price}}</p>
+        <a href="/products/{{this._id}}">Ver detalles</a>
+        <form action="/api/carts/{{cartId}}/products/{{this._id}}" method="POST">
+            <button type="submit">Agregar al carrito</button>
+        </form>
+    </div>
+{{/each}}
+
+<div class="pagination">
+    {{#if hasPrevPage}}
+        <a href="{{prevLink}}">Anterior</a>
+    {{/if}}
+
+    Página {{page}} de {{totalPages}}
+
+    {{#if hasNextPage}}
+        <a href="{{nextLink}}">Siguiente</a>
+    {{/if}}
+</div>

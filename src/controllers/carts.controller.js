@@ -91,9 +91,9 @@ const updateQuantity = async (req, res) => {
 };
 
 const deleteProductByCart = async (req, res) => {
-
+    const { cid, pid} = req.params;
     try {
-        const cart = await Cart.findByIdAndDelete(req.params.cid);
+        const cart = await Cart.findByIdAndDelete(cid);
         if(!cart) return res.status(404).json({ status: "error", message: "Carrito no encontrado" });
 
         cart.products = [];
